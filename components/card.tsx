@@ -1,12 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
 import styles from "./card.module.css"
+import { roundToNearest, toURL } from "@/lib/utils";
 import { ChevronLeftCircle, ChevronRightCircle } from "lucide-react";
-import { fetchMovieDetails, fetchOMDb, fetchPopular } from "@/lib/data/api-data";
-import { MovieDetails, MovieImages, MovieVideos, OMDb, Popular } from "@/lib/interfaces";
+import { fetchPopular } from "@/lib/data/api-data";
+import { Popular } from "@/lib/interfaces";
 
-const movie_id = 550
-const title = "Mr. Robot"
 const page_nr = 1
 
 export default async function Card() {
@@ -32,7 +31,7 @@ export default async function Card() {
           <Link
             key={index}
             className={styles.card}
-            href={`/movies/${data.title}`}
+            href={`/movies/${toURL(data.title)}`}
           > 
             <Image
             loading="eager"
@@ -53,8 +52,8 @@ export default async function Card() {
             <div className={styles.cont}>
               <h4>{data.title}</h4>
               <div className={styles.sub}>
-                <p>{data.genre_ids}, {data.release_date}</p>
-                <h3><span>IMDb</span><i></i> {data.vote_average}</h3>
+                <p>{data.release_date}</p>
+                <h3><span>IMDb</span><i></i>{roundToNearest(data.vote_average, 1)}</h3>
               </div>
             </div>
           </div>

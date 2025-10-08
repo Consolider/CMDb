@@ -1,9 +1,17 @@
 import NavBar from "@/components/navbar";
+import { Popular } from "@/lib/interfaces";
+import { fetchPopular } from "@/lib/data/api-data";
 
-export default function Header() {
+// before:bg-[url(@/public/bg-1.jpg)]
+
+const page_nr = 1
+
+export default async function Header() {
+    const popular: Popular | null = await fetchPopular(page_nr);
+
     return (
     <header
-        className="relative
+        className={`relative
         w-[90%]
         h-[90%]
         rounded-[20px]
@@ -12,8 +20,8 @@ export default function Header() {
         before:content-['']
         before:absolute
         before:w-[100%]
-        before:h-[100%]
-        before:bg-[url(@/public/bg-1.jpg)]
+        before:h-[100%]        
+        before:bg-[url(https://image.tmdb.org/t/p/original${popular?.results[0].backdrop_path})]
         before:bg-center
         before:bg-no-repeat
         before:bg-cover
@@ -25,7 +33,9 @@ export default function Header() {
         after:h-[100%]
         after:bg-linear-[180deg,transparent,black]
         after:z-[-1]
-        ">
+        ))}
+        `}>
+        
         <NavBar />
         <div id="bg"></div>
     </header>
