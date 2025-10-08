@@ -1,0 +1,28 @@
+{
+    "pages": [
+        {
+            "href": "/",
+            "label": "Home"
+        },
+        {
+            "href": "/directors",
+            "label": "Directors"
+        },
+        {
+            "href": "/actors",
+            "label": "Actors"
+        },
+        {
+            "href": "#",
+            "label": "|"
+        },
+        {
+            "href": "#",
+            "label": "Movies"
+        },
+        {
+            "href": "#",
+            "label": "Series"
+        }
+    ]
+}

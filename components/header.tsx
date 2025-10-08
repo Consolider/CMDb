@@ -1,0 +1,33 @@
+import NavBar from "@/components/navbar";
+
+export default function Header() {
+    return (
+    <header
+        className="relative
+        w-[90%]
+        h-[90%]
+        rounded-[20px]
+        overflow-hidden
+        shadow-[0_10px_25px_8px_rgba(0,0,0,0.25)]
+        before:content-['']
+        before:absolute
+        before:w-[100%]
+        before:h-[100%]
+        before:bg-[url(@/public/bg-1.jpg)]
+        before:bg-center
+        before:bg-no-repeat
+        before:bg-cover
+        before:opacity-[.6]
+        before:z-[-1]
+        after:content-['']
+        after:absolute
+        after:w-[100%]
+        after:h-[100%]
+        after:bg-linear-[180deg,transparent,black]
+        after:z-[-1]
+        ">
+        <NavBar />
+        <div id="bg"></div>
+    </header>
+    )
+}

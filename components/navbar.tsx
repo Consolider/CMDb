@@ -1,0 +1,46 @@
+import Image from "next/image";
+import Link from "next/link";
+//import data from "@/lib/pages.json";
+import Search from "./search";
+import styles from "./navbar.module.css"
+
+export default function NavBar() {
+    return (
+    <nav className={styles.nav}>
+        {/* <div className="logo_ul p-4 breakout flex gap-4 items-center"> */}
+        <div className={styles.logo_ul}>
+            <ul className={styles.logo_ul}>
+                <Image
+                    // className={styles.logo_ul}
+                    src="/logo.png"
+                    alt="Movie logo"
+                    width={80}
+                    height={80}
+                />
+
+                {/* <li className="flex gap-4 items-center"> */}
+                <li className={styles.logo_ul}>
+                    <Link href={"/"}>Home</Link>
+                    <Link href={"/directors"}>Directors</Link>
+                    <Link href={"/actors"}>Actors</Link>
+                    <p>|</p>
+                    <Link href={"#"}>Movies</Link>
+                    <Link href={"#"}>Series</Link>
+                </li>
+                
+                {/* {data["pages"].map((link, index) => (
+                <li key={index}>
+                    <Link
+                        className="p-3 block hover:bg-sky-600"
+                        href={link.href}
+                    >
+                        {link.label}
+                    </Link>
+                </li>
+                ))} */}
+            </ul>
+        </div>
+    <Search />
+    </nav>
+    )
+}
