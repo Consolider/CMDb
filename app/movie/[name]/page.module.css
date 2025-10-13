@@ -1,0 +1,83 @@
+.content {
+    position: relative;
+    color: #fff;
+    margin-top: 250px;
+    padding-left: 50px;
+    /* max-height: 100px; */
+
+    h1 {
+        font-size: 50px;    
+    }
+
+    p {
+        font-size: 12px;
+        width: 400px;
+        /* word-break: keep-all; */
+    }
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    h2 {
+        color: rgb(142, 230, 48);
+        font-size: 11px;
+        margin-right: 10px;
+    }
+
+    h3 {
+        color: rgb(255, 255, 255, .8);
+        font-size: 11px;
+        margin-right: 10px;
+    }
+
+    h4 {
+        color: rgb(255, 191, 0);
+        font-size: 11px;
+        margin-right: 5px;
+    }
+
+    h5 {
+        color: #fff;
+        /* display: flex; */
+        /* align-items: center; */
+        font-size: 11px;
+        margin-left: 5px;
+
+        >span {
+            background: yellow;
+            color: #000;
+            padding: 0px 3px;
+            margin: 0px 5px 0px 5px;
+            font-weight: 500;
+        }
+
+        >i {
+            margin-right: 5px;
+            color: yellow;
+        }
+    }
+}
+
+
+
+/* header .content .btns {
+    /*margin-top: 20px;
+    margin: 20px 0px 0px -10px;
+    display: flex;
+    align-items: center;
+} */
+
+/* header .content .btns a {
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: 500;
+    background: linear-gradient(90deg, #00bdff, #0079ff);
+    border-radius: 5px;
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    animation: button 1s linear infinite;
+} */

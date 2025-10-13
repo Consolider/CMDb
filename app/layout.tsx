@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
-import NavBar from "@/components/navbar";
-import Card from "@/components/card";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,9 +33,7 @@ export default function RootLayout({
       <body
         className={`${poppins.className} ${geistSans.variable} ${geistMono.variable} antialiased w-[100%] h-[100vh] flex items-center justify-center`}
         >
-        <Header />
         {children}
-        {/* <Card /> */}
       </body>
     </html>
   );

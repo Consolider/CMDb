@@ -1,15 +1,15 @@
-.section {
+.container {
     position: absolute;
     /* position: relative; */
     width: 100%;
-    /* width: auto; */
-    /* width: 250%; */
     height: auto;
-    padding: 0px 50px;
+    /* padding: 0px 50px; */
     /* padding: 0px 155px; */
-    /* top: 20px; */
     bottom: 20px;
+    /* bottom: 65px; */
     color: #fff;
+    border: 1px solid red;
+    display: flex;
 }
 
 .cards {

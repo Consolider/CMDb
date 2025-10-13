@@ -7,7 +7,6 @@ import styles from "./navbar.module.css"
 export default function NavBar() {
     return (
     <nav className={styles.nav}>
-        {/* <div className="logo_ul p-4 breakout flex gap-4 items-center"> */}
         <div className={styles.logo_ul}>
             <ul className={styles.logo_ul}>
                 <Image
@@ -17,8 +16,6 @@ export default function NavBar() {
                     width={80}
                     height={80}
                 />
-
-                {/* <li className="flex gap-4 items-center"> */}
                 <li className={styles.logo_ul}>
                     <Link href={"/"}>Home</Link>
                     <Link href={"/directors"}>Directors</Link>
