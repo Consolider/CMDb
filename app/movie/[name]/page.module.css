@@ -3,7 +3,6 @@
     color: #fff;
     margin-top: 250px;
     padding-left: 50px;
-    /* max-height: 100px; */
 
     h1 {
         font-size: 50px;    
@@ -12,6 +11,7 @@
     p {
         font-size: 12px;
         width: 400px;
+        max-height: 6lh;
         /* word-break: keep-all; */
     }
 }
@@ -61,23 +61,18 @@
     }
 }
 
+.container_heading{
+    position: absolute;
+    bottom: 230px;
+    margin-left: 50px;
+}
 
-
-/* header .content .btns {
-    /*margin-top: 20px;
-    margin: 20px 0px 0px -10px;
-    display: flex;
-    align-items: center;
-} */
-
-/* header .content .btns a {
-    padding: 8px 12px;
-    font-size: 15px;
-    font-weight: 500;
-    background: linear-gradient(90deg, #00bdff, #0079ff);
-    border-radius: 5px;
+.container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    /* padding: 0px 50px; */
+    bottom: 20px;
     color: #fff;
-    margin-left: 10px;
-    text-decoration: none;
-    animation: button 1s linear infinite;
-} */
+    display: flex;
+}
