@@ -1,4 +1,4 @@
-import { MovieCredits, MovieDetails, MovieImages, MovieVideos, Popular } from "../interfaces";
+import { MovieCredits, MovieDetails, MovieImages, MovieVideos, People, PeopleMovieCredits, Popular } from "../interfaces";
 
 const omdbApiKey = process.env.OMDB_API_KEY
 const tmdbApiKey = process.env.TMDB_API_KEY
@@ -90,6 +90,60 @@ fetch(url, options)
   .catch(err => console.error(err));
 }
 
+export async function fetchPeople(person_id: number): Promise<People | null> {
+  const url = `https://api.themoviedb.org/3/person/${person_id}`;
+  const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: `Bearer ${tmdbApiKey}`
+  },
+};
+
+  try {
+    const response = await fetch(url, options);
+
+    // Check if the response is ok (status code 200-299)
+    if (!response.ok) {
+      console.error('Fetch error:', response.statusText);
+      return null;
+    }
+
+    const result: People = await response.json();
+    return result;
+  } catch (err) {
+    console.error('Error fetching movie details:', err);
+    return null;
+  }
+}
+
+export async function fetchPeopleMovieCredits(person_id: number): Promise<PeopleMovieCredits | null> {
+  const url = `https://api.themoviedb.org/3/person/${person_id}/movie_credits`;
+  const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: `Bearer ${tmdbApiKey}`
+  },
+};
+
+  try {
+    const response = await fetch(url, options);
+
+    // Check if the response is ok (status code 200-299)
+    if (!response.ok) {
+      console.error('Fetch error:', response.statusText);
+      return null;
+    }
+
+    const result: PeopleMovieCredits = await response.json();
+    return result;
+  } catch (err) {
+    console.error('Error fetching movie details:', err);
+    return null;
+  }
+}
+
 export async function fetchPopular(page_nr: number): Promise<Popular | null> {
 const url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page_nr}`;
 const options = {
@@ -117,32 +171,32 @@ const options = {
   }
 }
 
-export async function fetchPopularNOTnull(page_nr: number) {
-const url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page_nr}`;
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: `Bearer ${tmdbApiKey}`
-  },
-};
+// export async function fetchPopularNOTnull(page_nr: number) {
+// const url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page_nr}`;
+// const options = {
+//   method: 'GET',
+//   headers: {
+//     accept: 'application/json',
+//     Authorization: `Bearer ${tmdbApiKey}`
+//   },
+// };
 
-  try {
-    const response = await fetch(url, options);
+//   try {
+//     const response = await fetch(url, options);
 
-    // Check if the response is ok (status code 200-299)
-    if (!response.ok) {
-      console.error('Fetch error:', response.statusText);
-    //   return null;
-    }
+//     // Check if the response is ok (status code 200-299)
+//     if (!response.ok) {
+//       console.error('Fetch error:', response.statusText);
+//     //   return null;
+//     }
 
-    const result: Popular = await response.json();
-    return result;
-  } catch (err) {
-    console.error('Error fetching movie details:', err);
-    // return null;
-  }
-}
+//     const result: Popular = await response.json();
+//     return result;
+//   } catch (err) {
+//     console.error('Error fetching movie details:', err);
+//     // return null;
+//   }
+// }
 
 
 export async function fetchOMDb(title: string){

@@ -11,9 +11,11 @@ export default async function Movie({
   }: {
   params: { name: string } 
   }) {
-  const [movie_id] = params.name.split('-'); // 'id-title' => ['id', 'title']
+  const awaitedParams = await params; // Ensure params is awaited   ERROR: Error: Route "/movie/[name]" used `params.name`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+  const [movie_id] = awaitedParams.name.split('-'); // 'id-title' => ['id', 'title']
+  // const [movie_id] = params.name.split('-'); // 'id-title' => ['id', 'title']
   const movieDetails: MovieDetails | null = await fetchMovieDetails(Number(movie_id));  
-
+  
   // "Needed" for "possibly null" prevention
   if (!movieDetails) {
     return (

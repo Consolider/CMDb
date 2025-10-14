@@ -36,7 +36,7 @@ export default async function CardActor({ movie_id }: CardActorProps) {
             <Link
               key={index}
               className={styles.card}
-              href={`/actor/${toURL(data.name)}`}
+              href={`/actor/${data.id}-${toURL(data.name)}`}
             > 
               <Image
               className={styles.poster}

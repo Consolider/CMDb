@@ -1,9 +1,7 @@
 .container {
-    /* position: absolute; */
-    /* position: relative; */
     width: 100%;
     height: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     padding-inline: 10px;
     gap: 10px;
@@ -33,11 +31,11 @@
     transition: .1s linear;
 } */
 
-/* .cards::-webkit-scrollbar {
+.cards::-webkit-scrollbar {
     display: none;
-} */
+}
 
-.bi_chevron_left, .bi_chevron_right {
+.chevron_left, .chevron_right {
     /* position: absolute; */
     /* position: relative; */
     /* top: 50%; */
@@ -50,22 +48,21 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    /* font-size: 12px; */
     cursor: pointer;
     transition: .3s linear;
     z-index: 999999999;
-    opacity: 1;
+    opacity: 0;
 }
 
-.bi_chevron_right {
+.chevron_right {
     left: unset;
     right: 1%;
 }
 
-.container:hover .bi_chevron_right {
+.container:hover .chevron_right {
     opacity: 1;
 }
 
-.container:hover .bi_chevron_left {
+.container:hover .chevron_left {
     opacity: 1;
 }
