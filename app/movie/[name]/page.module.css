@@ -1,5 +1,6 @@
 .content {
-    position: relative;
+    /* position: relative; */
+    position: absolute;
     color: #fff;
     margin-top: 250px;
     padding-left: 50px;

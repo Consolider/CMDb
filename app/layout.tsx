@@ -19,7 +19,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MOVIES",
+  title: "CMDB",
   description: "A website with movies.",
 };
 

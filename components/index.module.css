@@ -1,0 +1,135 @@
+.container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    /* padding: 0px 50px; */
+    /* bottom: 20px; */
+    color: #fff;
+}
+
+.cards {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    /* border: 1px solid blue; */
+    /* margin-top: 10px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* overflow-x: auto; */
+    /* scroll-behavior: smooth; */
+    opacity: .5;
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    position: relative;
+    min-width: 40vw;
+    height: 80vh;
+    /* border: 1px solid blue; */
+    border-radius: 8px;
+    /* margin-right: 10px; */
+    /* background: #000; */
+    transition: .1s linear;
+    background: url("/public/movie-bg.jpg");
+ 
+    /* &:hover {
+        min-width: 300px;
+        overflow: hidden;
+    } */
+}
+
+.poster {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    position: absolute;
+}
+
+.rest_card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    opacity: 0;
+    transition: .1s linear;
+    
+}
+
+.card:hover .rest_card {
+    opacity: 1;
+}
+
+.rest_card img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.rest_card::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(180deg, transparent, #000); */
+    /* background: url("/public/movie-bg.jpg"); */
+    /* background: #fff; */
+    border-radius: 8px;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.cont {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    padding: 0px 20px;
+}
+
+/* .sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sub p {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(255, 255, 255, .7);
+}
+
+.sub p span {
+    color: rgb(142, 230, 48);
+}
+
+.sub h4 {
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.sub h4 span {
+    background: yellow;
+    color: #000;
+    padding: 0px 3px;
+    margin: 0px 5px 0px 10px;
+    font-weight: 500;
+    border-radius: 2px;
+}
+
+.sub h4 i {
+    color: yellow;
+    margin-right: 3px;
+} */
