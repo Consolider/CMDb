@@ -29,7 +29,7 @@ export default function CardMovie({ data }: { data: any }) {
                     <h3>{data.title}</h3>
                     <div className={styles.sub}>
                         <p>{data.release_date}</p>
-                        <p>{data.media_type}</p>
+                        {/* <p>{data.media_type}</p> */}
                         <h4>
                             <span>IMDb</span><i><Star size={15} fill='yellow'/></i>{roundToNearest(data.vote_average, 1)}
                         </h4>

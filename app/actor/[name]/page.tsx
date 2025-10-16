@@ -3,11 +3,12 @@ import Image from "next/image";
 import NavBar from "@/components/navbar";
 import styles from "./page.module.css"
 import { Star } from 'lucide-react';
-import { getRandomNumber, roundToNearest, runtimeConv, toURL } from "@/lib/utils";
+import { switchValue, getRandomNumber, roundToNearest } from "@/lib/utils";
 import { fetchPeople, fetchPeopleCombinedCredits } from "@/lib/data/api-data";
 import { People, PeopleCombinedCredits } from "@/lib/interfaces";
 import Scroller from "@/components/scroller";
-import CardMovie from "@/components/card-movie";
+// import CardMovie from "@/components/card-movie";
+import CardMedia from "@/components/card-media";
 
 export const metadata: Metadata = {
   title: "Actor | CMDB",
@@ -60,6 +61,7 @@ export default async function Actor({
   }
 
   return (
+    peopleCombinedCredits.cast[getRandomNumber()].backdrop_path !== null ?
     <header
       className="relative w-[90%] h-[90%] rounded-[20px] overflow-hidden shadow-[0_10px_25px_8px_rgba(0,0,0,0.25)] before:content-[''] before:absolute before:w-[100%] before:h-[100%] before:bg-black before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[.6] before:z-[-1] after:content-[''] after:absolute after:w-[100%] after:h-[100%] after:bg-linear-[180deg,transparent,black] after:z-[-1]">
       <Image
@@ -78,6 +80,7 @@ export default async function Actor({
         <div className={styles.details}>
           <h2>Actor</h2>
           <h3>{people.birthday}</h3>
+          <h4>{switchValue(people.gender)}</h4>
           <h5>{people.place_of_birth}</h5>
           <h5><span>Popularity</span><i><Star size={12} fill='yellow'/></i>{roundToNearest(people.popularity, 1)}</h5>
         </div>
@@ -87,7 +90,41 @@ export default async function Actor({
         <section className={styles.container}>
           <Scroller>
           {peopleCombinedCredits.cast.map((data: any, index: number) => (
-            <CardMovie key={index} data={data} />
+            <CardMedia key={index} data={data} />
+          ))}
+          </Scroller>
+        </section>
+    </header>
+    :
+    <header
+      className="relative w-[90%] h-[90%] rounded-[20px] overflow-hidden shadow-[0_10px_25px_8px_rgba(0,0,0,0.25)] before:content-[''] before:absolute before:w-[100%] before:h-[100%] before:bg-black before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[.6] before:z-[-1] after:content-[''] after:absolute after:w-[100%] after:h-[100%] after:bg-linear-[180deg,transparent,black] after:z-[-1]">
+      <Image
+        loading="eager"
+        className="absolute bg-center bg-no-repeat bg-cover opacity-[.6] z-[-1] bg-linear-[180deg,transparent,black]"
+        src={`https://image.tmdb.org/t/p/original${peopleCombinedCredits.cast[0].backdrop_path}`}
+        alt={`${peopleCombinedCredits.cast[getRandomNumber()].title} backdrop`}
+        width={5000}
+        height={3000}
+      />
+      <NavBar />
+
+      <div className={styles.content}>
+        <h1>{people.name}</h1>
+        <p>{people.biography}</p>
+        <div className={styles.details}>
+          <h2>Actor</h2>
+          <h3>{people.birthday}</h3>
+          <h4>{switchValue(people.gender)}</h4>
+          <h5>{people.place_of_birth}</h5>
+          <h5><span>Popularity</span><i><Star size={12} fill='yellow'/></i>{roundToNearest(people.popularity, 1)}</h5>
+        </div>
+      </div>
+
+      <h2 className={styles.container_heading}>Known For</h2>
+        <section className={styles.container}>
+          <Scroller>
+          {peopleCombinedCredits.cast.map((data: any, index: number) => (
+            <CardMedia key={index} data={data} />
           ))}
           </Scroller>
         </section>

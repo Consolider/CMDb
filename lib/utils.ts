@@ -40,7 +40,7 @@ export function extractYear(dateString: string): string {
 }
 
 // Convert number to gender
-export function getGender(value: number): string {
+export function switchValue(value: number | string): string {
     switch(value) {
         case 0:
             return "Not set / not specified";
@@ -50,7 +50,14 @@ export function getGender(value: number): string {
             return "Male";
         case 3:
             return "Non-binary";
+        case "tv":
+            return "Serie"
         default:
             return "Unknown value";
     }
+}
+
+// Capitalize first letter
+export function capitalizeFirstLetter(input: string): string {
+    return input.charAt(0).toUpperCase() + input.slice(1);
 }
