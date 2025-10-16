@@ -75,21 +75,29 @@
     left: 0;
     top: 0;
     z-index: -1;
+    border-radius: 8px;
+    
 }
 
 .cont {
     position: absolute;
     width: 100%;
-    bottom: 10px;
+    bottom: 5px;
     left: 0;
     color: #fff;
     padding: 0px 20px;
+    width: fit-content;
 }
 
-.sub {
+/* .sub {
     display: flex;
     align-items: center;
     justify-content: space-between;
+} */
+
+.cont h4 {
+    width: 100px;
+    overflow: hidden;
 }
 
 .sub p {
