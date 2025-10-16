@@ -42,8 +42,8 @@
 
     h5 {
         color: #fff;
-        /* display: flex; */
-        /* align-items: center; */
+        display: flex;
+        align-items: center;
         font-size: 11px;
         margin-left: 5px;
 

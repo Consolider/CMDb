@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from "@/components/card.module.css"
+import { Star } from 'lucide-react';
 import { roundToNearest, toURL } from "@/lib/utils";
 
 export default function CardMovie({ data }: { data: any }) {
@@ -30,7 +31,7 @@ export default function CardMovie({ data }: { data: any }) {
                         <p>{data.release_date}</p>
                         <p>{data.media_type}</p>
                         <h4>
-                            <span>IMDb</span><i></i>{roundToNearest(data.vote_average, 1)}
+                            <span>IMDb</span><i><Star size={15} fill='yellow'/></i>{roundToNearest(data.vote_average, 1)}
                         </h4>
                     </div>
                 </div>

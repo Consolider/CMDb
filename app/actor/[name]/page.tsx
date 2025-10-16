@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import NavBar from "@/components/navbar";
 import styles from "./page.module.css"
+import { Star } from 'lucide-react';
 import { getRandomNumber, roundToNearest, runtimeConv, toURL } from "@/lib/utils";
 import { fetchPeople, fetchPeopleCombinedCredits } from "@/lib/data/api-data";
 import { People, PeopleCombinedCredits } from "@/lib/interfaces";
@@ -78,7 +79,7 @@ export default async function Actor({
           <h2>Actor</h2>
           <h3>{people.birthday}</h3>
           <h5>{people.place_of_birth}</h5>
-          <h5><span>Popularity</span> {roundToNearest(people.popularity, 1)}</h5>
+          <h5><span>Popularity</span><i><Star size={12} fill='yellow'/></i>{roundToNearest(people.popularity, 1)}</h5>
         </div>
       </div>
 

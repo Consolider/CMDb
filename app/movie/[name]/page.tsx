@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import NavBar from "@/components/navbar";
 import styles from "@/app/movie/[name]/page.module.css"
+import { Star } from 'lucide-react';
 import { roundToNearest, runtimeConv } from "@/lib/utils";
 import { fetchMovieCredits, fetchMovieDetails } from "@/lib/data/api-data";
 import { MovieCredits, MovieDetails } from "@/lib/interfaces";
@@ -69,7 +70,7 @@ export default async function Movie({
             <h4 key={index}>{genre.name},</h4>
           ))}
           <h5>{runtimeConv(movieDetails.runtime)}</h5>
-          <h5><span>IMDb</span> {roundToNearest(movieDetails.vote_average, 1)}</h5>
+          <h5><span>IMDb</span><i><Star size={12} fill='yellow'/></i>{roundToNearest(movieDetails.vote_average, 1)}</h5>
         </div>
       </div>
 

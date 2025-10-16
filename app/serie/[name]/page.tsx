@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import NavBar from "@/components/navbar";
 import styles from "@/app/movie/[name]/page.module.css"
+import { Star } from 'lucide-react';
 import { extractYear, roundToNearest } from "@/lib/utils";
 import { fetchSerieCredits, fetchSerieDetails } from "@/lib/data/api-data";
 import { MovieCredits, SerieDetails } from "@/lib/interfaces";
@@ -69,7 +70,7 @@ export default async function Serie({
             <h4 key={index}>{genre.name},</h4>
           ))}
           <h5>Seasons: {serieDetails.number_of_seasons}</h5>
-          <h5><span>IMDb</span> {roundToNearest(serieDetails.vote_average, 1)}</h5>
+          <h5><span>IMDb</span><i><Star size={12} fill='yellow'/></i>{roundToNearest(serieDetails.vote_average, 1)}</h5>
         </div>
       </div>
 
