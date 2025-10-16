@@ -1,11 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import NavBar from "@/components/navbar";
 import styles from "@/app/movie/[name]/page.module.css"
-import { roundToNearest, runtimeConv, toURL } from "@/lib/utils";
+import { roundToNearest, runtimeConv } from "@/lib/utils";
 import { fetchMovieCredits, fetchMovieDetails } from "@/lib/data/api-data";
 import { MovieCredits, MovieDetails } from "@/lib/interfaces";
 import Scroller from "@/components/scroller";
 import CardActor from "@/components/card-actor";
+
+export const metadata: Metadata = {
+  title: "Movie | CMDB",
+  description: "Movie details page.",
+};
 
 export default async function Movie({
   params
@@ -16,7 +22,7 @@ export default async function Movie({
   const [movie_id] = awaitedParams.name.split('-'); // 'id-title' => ['id', 'title']
   // const [movie_id] = params.name.split('-'); // 'id-title' => ['id', 'title']
   const movieDetails: MovieDetails | null = await fetchMovieDetails(Number(movie_id));  
-  const MovieCredits: MovieCredits | null = await fetchMovieCredits(Number(movie_id));  
+  const movieCredits: MovieCredits | null = await fetchMovieCredits(Number(movie_id));  
   
   // "Needed" for "possibly null" prevention
   if (!movieDetails) {
@@ -29,7 +35,7 @@ export default async function Movie({
       </section>
     )
   }
-  if (!MovieCredits) {
+  if (!movieCredits) {
     return (
       <section className="absolute text-center">
         <h4>Page - Movie</h4>
@@ -71,7 +77,7 @@ export default async function Movie({
         <section className={styles.container}>
         {/* <div className={styles.cards}> */}
           <Scroller>
-          {MovieCredits.cast.map((data: any, index: number) => (
+          {movieCredits.cast.map((data: any, index: number) => (
             <CardActor key={index} data={data} />
           ))}
           </Scroller>

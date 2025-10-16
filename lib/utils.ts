@@ -34,3 +34,23 @@ export function getRandomNumber(): number {
     return Math.floor(Math.random() * 11); // 11 is used to include 10
 }
 
+// Convert date to year only
+export function extractYear(dateString: string): string {
+    return dateString.split('-')[0];
+}
+
+// Convert number to gender
+export function getGender(value: number): string {
+    switch(value) {
+        case 0:
+            return "Not set / not specified";
+        case 1:
+            return "Female";
+        case 2:
+            return "Male";
+        case 3:
+            return "Non-binary";
+        default:
+            return "Unknown value";
+    }
+}

@@ -91,3 +91,19 @@
         }
     }
 }
+
+.container_heading {
+    position: absolute;
+    bottom: 230px;
+    margin-left: 50px;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    /* padding: 0px 50px; */
+    bottom: 20px;
+    color: #fff;
+    display: flex;
+}

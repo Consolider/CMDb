@@ -5,24 +5,20 @@
             "label": "Home"
         },
         {
-            "href": "/directors",
-            "label": "Directors"
-        },
-        {
-            "href": "/actors",
-            "label": "Actors"
-        },
-        {
             "href": "#",
             "label": "|"
         },
         {
-            "href": "#",
+            "href": "/movie",
             "label": "Movies"
         },
         {
-            "href": "#",
+            "href": "/serie",
             "label": "Series"
+        },
+        {
+            "href": "/actor",
+            "label": "Actors"
         }
     ]
 }

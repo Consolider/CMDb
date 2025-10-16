@@ -3,11 +3,13 @@ import Link from 'next/link';
 import styles from "@/components/card.module.css"
 import { roundToNearest, toURL } from "@/lib/utils";
 
-export default function CardMedia({ data }: { data: any }) {
+export default function CardMovie({ data }: { data: any }) {
     return (
-        // <section className={styles.container}>
-        // <div className={styles.cards}>
-        <Link className={styles.card} href={`/movie/${data.id}-${toURL(data.title)}`}>
+        <Link
+            className={styles.card}
+            // href={`/movie/${data.id}-${toURL(data.title)}`}
+            href={`/movie/${data.id}-${data.title}`}
+        >
             <Image
                 className={styles.poster}
                 src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
@@ -26,6 +28,7 @@ export default function CardMedia({ data }: { data: any }) {
                     <h3>{data.title}</h3>
                     <div className={styles.sub}>
                         <p>{data.release_date}</p>
+                        <p>{data.media_type}</p>
                         <h4>
                             <span>IMDb</span><i></i>{roundToNearest(data.vote_average, 1)}
                         </h4>
@@ -33,7 +36,5 @@ export default function CardMedia({ data }: { data: any }) {
                 </div>
             </div>
         </Link>
-        // </div>
-    // </section>
     );
 };

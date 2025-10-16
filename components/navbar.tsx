@@ -18,11 +18,10 @@ export default function NavBar() {
                 />
                 <li className={styles.logo_ul}>
                     <Link href={"/"}>Home</Link>
-                    <Link href={"/directors"}>Directors</Link>
-                    <Link href={"/actors"}>Actors</Link>
                     <p>|</p>
-                    <Link href={"#"}>Movies</Link>
-                    <Link href={"#"}>Series</Link>
+                    <Link href={"/movie"}>Movies</Link>
+                    <Link href={"/serie"}>Series</Link>
+                    <Link href={"/actor"}>Actors</Link>
                 </li>
                 
                 {/* {data["pages"].map((link, index) => (

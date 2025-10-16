@@ -12,6 +12,7 @@
         font-size: 12px;
         width: 400px;
         max-height: 6lh;
+        overflow-y: hidden;
         /* word-break: keep-all; */
     }
 }
@@ -61,7 +62,7 @@
     }
 }
 
-.container_heading{
+.container_heading {
     position: absolute;
     bottom: 230px;
     margin-left: 50px;
