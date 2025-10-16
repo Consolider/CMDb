@@ -47,7 +47,7 @@ export default async function Actor({
     )
   }
 
-  if (!peopleCombinedCredits.cast[getRandomNumber()].backdrop_path) {
+  if (!peopleCombinedCredits.cast[0].backdrop_path) {
     return (
       <section className="absolute text-center">
         <h4>Page - Actor</h4>
