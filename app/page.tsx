@@ -11,7 +11,15 @@ import { getRandomNumber } from "@/lib/utils";
 const page_nr = 1
 const popular: MoviePopular | null = await fetchMoviePopular(page_nr);
 
-export default async function Home() {  
+
+export default async function Home() {
+  return (
+    <Index />
+  )
+}
+
+
+{/* export default async function Home() {  
   return (
     popular !== null ?
     // <header className={styles.header}>
@@ -25,15 +33,15 @@ export default async function Home() {
         width={5000}
         height={3000}
       />
-      {/* <NavBar /> */}
-      {/* // <h2 className={styles.container_heading}>Popular</h2>
+      // </header><NavBar />
+      // <h2 className={styles.container_heading}>Popular</h2>
       // <section className={styles.container}>
       //     <Scroller>
       //     {popular.results.map((data: any, index: number) => (
       //       <CardMovie key={index} data={data} />
       //     ))}
       //     </Scroller>
-      // </section> */}
+      // </section>
       <Index />
     </header>
     :
@@ -41,4 +49,4 @@ export default async function Home() {
       <NavBar />
     </header>
   )
-}
+}  */}

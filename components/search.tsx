@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./search.module.css"
+import styles from "@/components/search.module.css"
 
 export default function Search() {
     return (
         <div className={styles.search_user}>
             <input type="text" placeholder="Search..." id="search_input" />
-            {/* <div className={styles.shufbtn}> */}
-                {/* <a href="#" onclick="GoToRandomUrl()" id="shuffle">Shuffle <i className="bi bi-shuffle"></i></a> */}
-            {/* </div> */}
             <Image
                 className={styles.search_user}
                 src="/user.jpg"
@@ -33,6 +30,10 @@ export default function Search() {
                     <p>Studio, Type, Year, <span>IMDb</span><i className="bi bi-star-fill"></i> 1.3</p>
                 </div>
                 </Link>
+            </div>
+        </div>
+    )
+}    
                 {/* 
                 <Link
                     className={styles.card}
@@ -50,8 +51,8 @@ export default function Search() {
                     <p>Studio, Type, Year, <span>IMDb</span><i className="bi bi-star-fill"></i> 1.3</p>
                 </div>
                 </Link>
-                 */}
             </div>
         </div>
-    )
+    ) 
 }
+*/}

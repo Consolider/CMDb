@@ -108,61 +108,6 @@ export interface MoviePopular {
   total_results: number;
 }
 
-export interface MovieImages {
-  "backdrops": [
-    {
-      "aspect_ratio": number,
-      "height": number,
-      "iso_639_1": null,
-      "file_path": string,
-      "vote_average": number,
-      "vote_count": number,
-      "width": number
-    }  
-  ],
-  "id": number,
-  "logos": [
-    {
-      "aspect_ratio": number,
-      "height": number,
-      "iso_639_1": string,
-      "file_path": string,
-      "vote_average": number,
-      "vote_count": number,
-      "width": number
-    }
-  ],
-  "posters": [
-    {
-      "aspect_ratio": number,
-      "height": number,
-      "iso_639_1": string,
-      "file_path": string,
-      "vote_average": number,
-      "vote_count": number,
-      "width": number
-    }
-  ]
-}
-
-export interface MovieVideos {
-  "id": number,
-  "results": [
-    {
-      "iso_639_1": string,
-      "iso_3166_1": string,
-      "name": string,
-      "key": string,
-      "site": string,
-      "size": number,
-      "type": string,
-      "official": boolean,
-      "published_at": string,
-      "id": string
-    }
-  ]
-}
-
 export interface People {
   adult: boolean;
   also_known_as: string[];
@@ -412,6 +357,7 @@ export interface SeriePopular {
   page: number;
   results: [
     {
+      adult: boolean;
       backdrop_path: string;
       first_air_date: string;
       genre_ids: number[];
@@ -429,4 +375,21 @@ export interface SeriePopular {
   ]
   total_pages: number;
   total_results: number;
+}
+
+export interface SearchSerieResults {
+  adult: boolean;
+  backdrop_path: string;
+  first_air_date: string;
+  genre_ids: number[];
+  id: number;
+  name: string;
+  origin_country: string[];
+  original_language: string;
+  original_name: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  vote_average: number;
+  vote_count: number;
 }

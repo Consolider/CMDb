@@ -17,8 +17,8 @@ export default function NavBar() {
                     height={80}
                 />
                 <li className={styles.logo_ul}>
-                    <Link href={"/"}>Home</Link>
-                    <p>|</p>
+                    {/* <Link href={"/"}>Home</Link> */}
+                    {/* <p>|</p> */}
                     <Link href={"/movie"}>Movies</Link>
                     <Link href={"/serie"}>Series</Link>
                     <Link href={"/actor"}>Actors</Link>
@@ -36,7 +36,7 @@ export default function NavBar() {
                 ))} */}
             </ul>
         </div>
-    <Search />
+    {/* <Search/> */}
     </nav>
     )
 }

@@ -3,6 +3,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: 1px solid red; */
+    right: 60px;
 
     input {
         padding: 3px 10px;
@@ -26,30 +28,13 @@
     }
 }
 
-.shufbtn {
-    display: flex;
-    align-items: center;
-
-    a {
-        padding: 1px 12px;
-        font-size: 14px;
-        font-weight: 500;
-        background: linear-gradient(90deg, #f177aa, #f1177a);
-        border-radius: 5px;
-        color: #fff;
-        margin-right: 10px;
-        text-decoration: none;
-        animation: button 1s linear infinite;
-    }
-}
-
 .search {
     position: absolute;
     width: 300px;
     height: 270px;
     /* border: 1px solid #fff; */
     right: 0;
-    top: 40px;
+    top: 60px;
     z-index: 99999;
     overflow-y: auto;
 }
@@ -85,7 +70,7 @@
     margin-bottom: 5px;
     padding: 3px 0px;
     text-decoration: none;
-    display: none;
+    /* display: none; */
 
     img {
     width: 28px;
