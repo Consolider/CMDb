@@ -10,8 +10,8 @@ export default function Search() {
                 className={styles.search_user}
                 src="/user.jpg"
                 alt="User Image"
-                width={23}
-                height={23}
+                width={100}
+                height={100}
             />
             <div className={styles.search}>
                 <Link

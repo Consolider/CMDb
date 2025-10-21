@@ -21,7 +21,7 @@ export default function NavBar() {
                 </li>
             </ul>
         </div>
-    {/* <Search/> */}
+    <Search/>
     </nav>
     )
 }

@@ -9,9 +9,9 @@ export default function Scroller ({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const cardsRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
+  // -==[ Percentage scroll ]==-
   const scroll = (direction: "left" | "right") => {
         if (!cardsRef.current) return; // If the ref isn’t attached yet, do nothing.
         const { clientWidth } = cardsRef.current;  // clientWidth = visible width of the element.
@@ -19,20 +19,19 @@ export default function Scroller ({
         cardsRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });  // Perform the scroll smoothly
     };
 
+  // -==[ Pixel scroll ]==-
   // if (!cardsRef.current) return
   //   const { clientWidth } = cardsRef.current
 
   // const scrollLeft = () => {
   //   if (cardsRef.current) {
-  //     // cardsRef.current.scrollLeft -= 1540;
-  //     cardsRef.current.scrollLeft = -clientWidth * 0.85;
+  //     cardsRef.current.scrollLeft -= 1540;
   //   }
   // };
 
   // const scrollRight = () => {
   //   if (cardsRef.current) {
-  //     // cardsRef.current.scrollLeft += 1540;
-  //     cardsRef.current.scrollLeft = clientWidth * 0.85;
+  //     cardsRef.current.scrollLeft += 1540;
   //   }
   // };
 

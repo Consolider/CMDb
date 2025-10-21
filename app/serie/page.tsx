@@ -32,7 +32,7 @@ export default async function SeriePage() {
           />
           <div className={styles.nav}>
             <NavBar />
-            <SearchSerie />
+            {/* <SearchSerie /> */}
           </div>
           <h2 className={styles.container_heading}>Popular Series</h2>
           <section className={styles.container}>
