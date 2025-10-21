@@ -7,7 +7,7 @@
 }
 
 .splash_logo {
-    animation: pulse 4s infinite ease-in; /* lägg på animation */
+    animation: pulse 4s infinite ease-in;
 }
 
 /* -- pulsing animation -- */

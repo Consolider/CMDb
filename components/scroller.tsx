@@ -9,8 +9,6 @@ export default function Scroller ({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const leftBtnRef = useRef<HTMLButtonElement | null>(null);
-  // const rightBtnRef = useRef<HTMLButtonElement | null>(null);
   // const cardsRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
@@ -40,7 +38,6 @@ export default function Scroller ({
 
   return (
     <div className={styles.container}>
-    {/* <div> */}
       {/* <button onClick={scrollLeft} aria-label="Scroll left"> */}
       <button onClick={() => scroll("left")} aria-label="Scroll left">
         <ChevronLeftCircle size={25} className={styles.chevron_left}/>

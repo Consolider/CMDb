@@ -11,7 +11,6 @@ export default function CardMedia({ data }: { data: any }) {
         <Link
             className={styles.card}
             href={`/movie/${data.id}-${toURL(data.title)}`}
-            // href={`/movie/${data.id}-${data.title}`}
         >
             <Image
                 className={styles.poster}

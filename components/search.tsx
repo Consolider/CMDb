@@ -34,25 +34,3 @@ export default function Search() {
         </div>
     )
 }    
-                {/* 
-                <Link
-                    className={styles.card}
-                    href="/actors"
-                >
-                <Image
-                    className={styles.card}
-                    src="/movie.jpg"
-                    alt="Movie Thumbnail"
-                    width={28}
-                    height={90}
-                />
-                <div className={styles.cont}>
-                    <h3>Title</h3>
-                    <p>Studio, Type, Year, <span>IMDb</span><i className="bi bi-star-fill"></i> 1.3</p>
-                </div>
-                </Link>
-            </div>
-        </div>
-    ) 
-}
-*/}

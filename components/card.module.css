@@ -1,33 +1,7 @@
-/* .container {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    padding: 0px 50px;
-    bottom: 20px;
-    color: #fff;
-} */
-
-/* .cards {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    border: 1px solid blue;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-} */
-
-/* .cards::-webkit-scrollbar {
-    display: none;
-} */
-
 .card {
     position: relative;
     min-width: 130px;
     height: 195px;
-    /* border: 1px solid blue; */
     border-radius: 8px;
     margin-right: 10px;
     background: #000;
