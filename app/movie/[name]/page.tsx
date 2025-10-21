@@ -20,8 +20,7 @@ export default async function Movie({
   params: { name: string } 
   }) {
   const awaitedParams = await params; // Ensure params is awaited   ERROR: Error: Route "/movie/[name]" used `params.name`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-  const [movie_id] = awaitedParams.name.split('-'); // 'id-title' => ['id', 'title']
-  // const [movie_id] = params.name.split('-'); // 'id-title' => ['id', 'title']
+  const [movie_id] = awaitedParams.name.split('-'); // Split value,'id-title' => ['id', 'title']
   const movieDetails: MovieDetails | null = await fetchMovieDetails(Number(movie_id));  
   const movieCredits: MovieCredits | null = await fetchMovieCredits(Number(movie_id));  
   
@@ -48,11 +47,10 @@ export default async function Movie({
   }
 
   return (
-    <header
-      className="relative w-[90%] h-[90%] rounded-[20px] overflow-hidden shadow-[0_10px_25px_8px_rgba(0,0,0,0.25)] before:content-[''] before:absolute before:w-[100%] before:h-[100%] before:bg-black before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[.6] before:z-[-1] after:content-[''] after:absolute after:w-[100%] after:h-[100%] after:bg-linear-[180deg,transparent,black] after:z-[-1]">
+    <header className={styles.header}>
       <Image
         loading="eager"
-        className="absolute bg-center bg-no-repeat bg-cover opacity-[.6] z-[-1] bg-linear-[180deg,transparent,black]"
+        className={styles.backdrop}
         src={`https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`}
         alt={`${movieDetails.title} backdrop`}
         width={5000}
@@ -76,15 +74,12 @@ export default async function Movie({
 
       <h2 className={styles.container_heading}>Actors</h2>
         <section className={styles.container}>
-        {/* <div className={styles.cards}> */}
           <Scroller>
           {movieCredits.cast.map((data: any, index: number) => (
             <CardActor key={index} data={data} />
           ))}
           </Scroller>
-        {/* </div> */}
         </section>
-      {/* <CardActor movie_id={Number(movie_id)}/> */}
     </header>
   )
 }

@@ -60,8 +60,7 @@ export default async function Actor({
 
   return (
     (peopleCombinedCredits.cast[getRandomNumber()].backdrop_path !== null || peopleCombinedCredits.cast[getRandomNumber()].title !== null) ?
-    <header
-      className={styles.header}>
+    <header className={styles.header}>
       <Image
         loading="eager"
         className={styles.backdrop}
@@ -94,8 +93,7 @@ export default async function Actor({
         </section>
     </header>
     :
-    <header
-      className="relative w-[90%] h-[90%] rounded-[20px] overflow-hidden shadow-[0_10px_25px_8px_rgba(0,0,0,0.25)] before:content-[''] before:absolute before:w-[100%] before:h-[100%] before:bg-black before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[.6] before:z-[-1] after:content-[''] after:absolute after:w-[100%] after:h-[100%] after:bg-linear-[180deg,transparent,black] after:z-[-1]">
+    <header className="relative w-[90%] h-[90%] rounded-[20px] overflow-hidden shadow-[0_10px_25px_8px_rgba(0,0,0,0.25)] before:content-[''] before:absolute before:w-[100%] before:h-[100%] before:bg-black before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[.6] before:z-[-1] after:content-[''] after:absolute after:w-[100%] after:h-[100%] after:bg-linear-[180deg,transparent,black] after:z-[-1]">
       <Image
         loading="eager"
         className="absolute bg-center bg-no-repeat bg-cover opacity-[.6] z-[-1] bg-linear-[180deg,transparent,black]"
