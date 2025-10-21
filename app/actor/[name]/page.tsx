@@ -7,7 +7,6 @@ import { switchValue, getRandomNumber, roundToNearest } from "@/lib/utils";
 import { fetchPeople, fetchPeopleCombinedCredits } from "@/lib/data/api-data";
 import { People, PeopleCombinedCredits } from "@/lib/interfaces";
 import Scroller from "@/components/scroller";
-// import CardMovie from "@/components/card-movie";
 import CardMedia from "@/components/card-media";
 
 export const metadata: Metadata = {
@@ -21,8 +20,7 @@ export default async function Actor({
   params: { name: string } 
   }) {
   const awaitedParams = await params; // Ensure params is awaited   ERROR: Error: Route "/movie/[name]" used `params.name`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-  const [person_id] = awaitedParams.name.split('-'); // 'id-title' => ['id', 'title']
-  // const [person_id] = await params.name.split('-'); // 'id-title' => ['id', 'title']
+  const [person_id] = awaitedParams.name.split('-'); // Split value,'id-title' => ['id', 'title']
   const peopleCombinedCredits: PeopleCombinedCredits | null = await fetchPeopleCombinedCredits(Number(person_id));
   const people: People | null = await fetchPeople(Number(person_id));
 
@@ -60,16 +58,13 @@ export default async function Actor({
     )
   }
 
-  
-      
-
   return (
     (peopleCombinedCredits.cast[getRandomNumber()].backdrop_path !== null || peopleCombinedCredits.cast[getRandomNumber()].title !== null) ?
     <header
-      className="relative w-[90%] h-[90%] rounded-[20px] overflow-hidden shadow-[0_10px_25px_8px_rgba(0,0,0,0.25)] before:content-[''] before:absolute before:w-[100%] before:h-[100%] before:bg-black before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[.6] before:z-[-1] after:content-[''] after:absolute after:w-[100%] after:h-[100%] after:bg-linear-[180deg,transparent,black] after:z-[-1]">
+      className={styles.header}>
       <Image
         loading="eager"
-        className="absolute bg-center bg-no-repeat bg-cover opacity-[.6] z-[-1] bg-linear-[180deg,transparent,black]"
+        className={styles.backdrop}
         src={`https://image.tmdb.org/t/p/original${peopleCombinedCredits.cast[getRandomNumber()].backdrop_path}`}
         alt={`${peopleCombinedCredits.cast[getRandomNumber()].title} backdrop`}
         width={5000}
