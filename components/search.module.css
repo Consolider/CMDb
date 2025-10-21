@@ -103,21 +103,30 @@
         white-space: nowrap;
         width: 250px;
     }
+}
+
+.sub {
+    display: flex;
+    align-items: center;
 
     p {
         font-size: 10px;
         color: rgb(255, 255, 255, .8);
+        margin-right: 5px;
     }
 
     span {
+        font-size: 10px;
         background: yellow;
         color: #000;
         padding: 0px 3px;
-        margin: 0px 5px 0px 10px;
+        margin: 0px 3px 0px 5px;
         font-weight: 500;
     }
 
     i {
+        font-size: 10px;
         color: yellow;
+        margin-right: 3px;
     }
 }

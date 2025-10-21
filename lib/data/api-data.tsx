@@ -219,9 +219,6 @@ export async function fetchPeopleSerieCredits(person_id: number): Promise<People
   }
 }
 
-// export async function fetchSearchSerie(query: string) {
-// export async function fetchSearchSerie(query: string): Promise<SearchSerieResults | null> {
-// export async function fetchSearchSerie(): Promise<SeriePopular | null> {
 export async function fetchSearchSerie(query: string): Promise<SeriePopular | null> {
 const url = `https://api.themoviedb.org/3/search/tv?query=${query}`;
 const options = {
