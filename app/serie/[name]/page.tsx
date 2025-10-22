@@ -8,6 +8,8 @@ import { fetchSerieCredits, fetchSerieDetails } from "@/lib/data/api-data";
 import { MovieCredits, SerieDetails } from "@/lib/interfaces";
 import Scroller from "@/components/scroller";
 import CardActor from "@/components/card-actor";
+import Skeleton from "@/components/skeleton";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Serie | CMDB",
@@ -23,7 +25,8 @@ export default async function Serie({
   const [serie_id] = awaitedParams.name.split('-'); // Split value,'id-title' => ['id', 'title']
   const serieDetails: SerieDetails | null = await fetchSerieDetails(Number(serie_id));  
   const serieCredits: MovieCredits | null = await fetchSerieCredits(Number(serie_id));  
-  
+  const loading = false;
+
   // "Needed" for "possibly null" prevention
   if (!serieDetails) {
     return (
@@ -77,7 +80,9 @@ export default async function Serie({
         <section className={styles.container}>
           <Scroller>
           {serieCredits.cast.map((data: any, index: number) => (
-            <CardActor key={index} data={data} />
+            <Suspense key={index} fallback={<Skeleton />}>
+              <CardActor key={index} data={data} loading={loading} />
+            </Suspense>
           ))}
           </Scroller>
         </section>

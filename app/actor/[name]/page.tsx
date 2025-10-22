@@ -8,6 +8,8 @@ import { fetchPeople, fetchPeopleCombinedCredits } from "@/lib/data/api-data";
 import { People, PeopleCombinedCredits } from "@/lib/interfaces";
 import Scroller from "@/components/scroller";
 import CardMedia from "@/components/card-media";
+import Skeleton from "@/components/skeleton";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Actor | CMDB",
@@ -23,6 +25,7 @@ export default async function Actor({
   const [person_id] = awaitedParams.name.split('-'); // Split value,'id-title' => ['id', 'title']
   const peopleCombinedCredits: PeopleCombinedCredits | null = await fetchPeopleCombinedCredits(Number(person_id));
   const people: People | null = await fetchPeople(Number(person_id));
+  const loading = false;
 
   // "Needed" for "possibly null" prevention
   if (!people) {
@@ -87,7 +90,9 @@ export default async function Actor({
         <section className={styles.container}>
           <Scroller>
           {peopleCombinedCredits.cast.map((data: any, index: number) => (
-            <CardMedia key={index} data={data} />
+            <Suspense key={index} fallback={<Skeleton />}>
+              <CardMedia key={index} data={data} loading={loading} />
+            </Suspense>
           ))}
           </Scroller>
         </section>
@@ -120,7 +125,9 @@ export default async function Actor({
         <section className={styles.container}>
           <Scroller>
           {peopleCombinedCredits.cast.map((data: any, index: number) => (
-            <CardMedia key={index} data={data} />
+            <Suspense key={index} fallback={<Skeleton />}>
+              <CardMedia key={index} data={data} loading={loading} />
+            </Suspense>
           ))}
           </Scroller>
         </section>

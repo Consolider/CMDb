@@ -3,8 +3,12 @@ import Link from 'next/link';
 import styles from "@/components/card.module.css"
 import { Star } from 'lucide-react';
 import { capitalizeFirstLetter, extractYear, roundToNearest, switchValue, toURL } from "@/lib/utils";
+import Skeleton from "@/components/skeleton";
 
-export default function CardMedia({ data }: { data: any }) {
+export default function CardMedia({ data, loading }: { data: any; loading: boolean }) {
+    if (loading) {
+        return <Skeleton />;
+    }
 
     if (!data.name) {
     return (

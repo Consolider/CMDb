@@ -7,6 +7,8 @@ import { fetchSeriePopular } from "@/lib/data/api-data";
 import CardSerie from "@/components/card-serie";
 import Scroller from "@/components/scroller";
 import { getRandomNumber } from "@/lib/utils";
+import Skeleton from "@/components/skeleton";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Serie | CMDB",
@@ -15,6 +17,7 @@ export const metadata: Metadata = {
 
 const page_nr = 1
 const popular: SeriePopular | null = await fetchSeriePopular(page_nr);
+const loading = false;
 
 export default async function SeriePage() {  
   
@@ -36,7 +39,9 @@ export default async function SeriePage() {
           <section className={styles.container}>
               <Scroller>
               {popular.results.map((data: any, index: number) => (
-                <CardSerie key={index} data={data} />
+                <Suspense key={index} fallback={<Skeleton />}>
+                  <CardSerie key={index} data={data} loading={loading} />
+                </Suspense>
               ))}
               </Scroller>
           </section>
