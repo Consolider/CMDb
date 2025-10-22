@@ -79,7 +79,7 @@ export default async function Actor({
           <h3>{people.birthday}</h3>
           <h4>{switchValue(people.gender)}</h4>
           <h5>{people.place_of_birth}</h5>
-          <h5><span>Popularity</span><i><Star size={12} fill='yellow'/></i>{roundToNearest(people.popularity, 1)}</h5>
+          <h6><span>Popularity</span><i><Star size={12} fill='yellow'/></i>{roundToNearest(people.popularity, 1)}</h6>
         </div>
       </div>
 
@@ -112,7 +112,7 @@ export default async function Actor({
           <h3>{people.birthday}</h3>
           <h4>{switchValue(people.gender)}</h4>
           <h5>{people.place_of_birth}</h5>
-          <h5><span>Popularity</span><i><Star size={12} fill='yellow'/></i>{roundToNearest(people.popularity, 1)}</h5>
+          <h6><span>Popularity</span><i><Star size={12} fill='yellow'/></i>{roundToNearest(people.popularity, 1)}</h6>
         </div>
       </div>
 
