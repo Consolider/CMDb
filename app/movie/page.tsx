@@ -15,8 +15,9 @@ export const metadata: Metadata = {
 
 const page_nr = 1
 const popular: MoviePopular | null = await fetchMoviePopular(page_nr);
+const loading = true;
 
-export default async function MoviePage() {  
+export default async function MoviePage() {
   return (
       popular !== null ?
       <header className={styles.header}>
@@ -33,7 +34,7 @@ export default async function MoviePage() {
           <section className={styles.container}>
               <Scroller>
               {popular.results.map((data: any, index: number) => (
-                <CardMovie key={index} data={data} />
+                <CardMovie key={index} data={data} loading={loading} />
               ))}
               </Scroller>
           </section>

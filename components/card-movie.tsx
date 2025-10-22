@@ -3,8 +3,21 @@ import Link from 'next/link';
 import styles from "@/components/card.module.css"
 import { Star } from 'lucide-react';
 import { roundToNearest, toURL } from "@/lib/utils";
+import Skeleton from "@/components/skeleton";
 
-export default function CardMovie({ data }: { data: any }) {
+export default function CardMovie({ data, loading }: { data: any; loading: boolean }) {
+    // const [isLoading, setIsLoading] = useState(true);
+
+    // useEffect(() => {
+    //     // Simulate loading (or fetch your data)
+    //     const timer = setTimeout(() => setIsLoading(false), 2000);
+    //     return () => clearTimeout(timer);
+    // }, []);
+
+    if (loading) {
+        return <Skeleton />;
+    }
+
     return (
         <Link
             className={styles.card}
