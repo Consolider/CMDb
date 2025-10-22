@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
 
-    Image {
+    img {
         width: 80px;
     }
 
@@ -43,4 +43,19 @@
 
 .active {
     color: #f17711;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        padding: 0px 10px;
+        height: 15%;
+    }
+    .logo_ul img {
+        width: 50px;
+    }
+    .logo_ul ul {
+        position: absolute;
+        top: 0px;
+        left: 10px;
+    }
 }

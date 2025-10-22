@@ -126,3 +126,43 @@
         margin-right: 3px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .search_user {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    top: 15px;
+    width: 40%;
+    right: 10px;
+
+        input {
+            width: 100%;
+            margin-right: 40px;
+        }
+        img {
+        top: 3px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search_user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    top: 10%;
+    width: 80vw;
+    right: 10px;
+
+        input {
+            width: 100%;
+            margin-right: 20px;
+        }
+        img {
+        top: 0px;
+        }
+    }
+}
