@@ -8,6 +8,7 @@ import CardSerie from "@/components/card-serie";
 import Scroller from "@/components/scroller";
 import { getRandomNumber } from "@/lib/utils";
 import SearchSerie from "@/components/search-serie";
+import SearchInput from "@/components/search-input";
 
 export const metadata: Metadata = {
   title: "Serie | CMDB",
@@ -33,6 +34,7 @@ export default async function SeriePage() {
           <div className={styles.nav}>
             <NavBar />
             {/* <SearchSerie /> */}
+            <SearchInput />
           </div>
           <h2 className={styles.container_heading}>Popular Series</h2>
           <section className={styles.container}>
