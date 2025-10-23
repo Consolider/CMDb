@@ -16,6 +16,7 @@ The site is using The Movie Database (TMDB) API to get its data.
 
 ## Functions
 - Filtering on types. Movies, Series and Actors
+- Clickable cards on each type for more information
 - Searchbar on each page that search within the type. Type Movies -> Search Movies etc.
 
 ---
