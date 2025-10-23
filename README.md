@@ -8,9 +8,9 @@ The site is using The Movie Database (TMDB) API to get its data.
 
 ## Table of contents
 
-- [Functions](#-functions)
-- [Technologies](#-technologies)
-- [Installation](#-installation)
+- [Functions](#functions)
+- [Technologies](#technologies)
+- [Installation](#installation)
 
 ---
 
@@ -31,10 +31,10 @@ The site is using The Movie Database (TMDB) API to get its data.
 ##   Installation
 ```bash
 # Clone repo
-git clone https://github.com/VladZGarcia/ecommersepage.git
+git clone https://github.com/Consolider/CMDb.git
 
 # Navigate into the folder
-cd ecommersepage
+cd CMDb
 
 # Install dependencies
 npm install
