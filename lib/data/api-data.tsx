@@ -220,14 +220,15 @@ export async function fetchPeopleSerieCredits(person_id: number): Promise<People
 }
 
 export async function fetchSearchSerie(query: string): Promise<SeriePopular | null> {
-const url = `https://api.themoviedb.org/3/search/tv?query=${query}`;
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: `Bearer ${tmdbApiKey}`
-  },
-};
+  const url = `https://api.themoviedb.org/3/search/tv?query=${query}`;
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${tmdbApiKey}`,
+      // 'Cache-Control': 'no-cache'
+    },
+  };
 
   try {
     const response = await fetch(url, options);
@@ -240,6 +241,7 @@ const options = {
 
     const result: SeriePopular = await response.json();
     return result;
+
   } catch (err) {
     console.error('Error fetching movie details:', err);
     return null;

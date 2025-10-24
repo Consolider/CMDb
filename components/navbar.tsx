@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Search from "./search";
+// import Search from "./search";
 import styles from "./navbar.module.css"
 
 export default function NavBar() {
@@ -21,7 +21,7 @@ export default function NavBar() {
                 </li>
             </ul>
         </div>
-    <Search/>
+    {/* <Search/> */}
     </nav>
     )
 }
