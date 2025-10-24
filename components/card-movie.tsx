@@ -3,8 +3,13 @@ import Link from 'next/link';
 import styles from "@/components/card.module.css"
 import { Star } from 'lucide-react';
 import { roundToNearest, toURL } from "@/lib/utils";
+import Skeleton from "@/components/skeleton";
 
-export default function CardMovie({ data }: { data: any }) {
+export default function CardMovie({ data, loading }: { data: any; loading: boolean }) {
+    if (loading) {
+        return <Skeleton />;
+    }
+
     return (
         <Link
             className={styles.card}

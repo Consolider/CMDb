@@ -8,6 +8,8 @@ import { fetchMovieCredits, fetchMovieDetails } from "@/lib/data/api-data";
 import { MovieCredits, MovieDetails } from "@/lib/interfaces";
 import Scroller from "@/components/scroller";
 import CardActor from "@/components/card-actor";
+import Skeleton from "@/components/skeleton";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Movie | CMDB",
@@ -23,7 +25,8 @@ export default async function Movie({
   const [movie_id] = awaitedParams.name.split('-'); // Split value,'id-title' => ['id', 'title']
   const movieDetails: MovieDetails | null = await fetchMovieDetails(Number(movie_id));  
   const movieCredits: MovieCredits | null = await fetchMovieCredits(Number(movie_id));  
-  
+  const loading = false;
+
   // "Needed" for "possibly null" prevention
   if (!movieDetails) {
     return (
@@ -76,7 +79,9 @@ export default async function Movie({
         <section className={styles.container}>
           <Scroller>
           {movieCredits.cast.map((data: any, index: number) => (
-            <CardActor key={index} data={data} />
+            <Suspense key={index} fallback={<Skeleton />}>
+              <CardActor key={index} data={data} loading={loading} />
+            </Suspense>
           ))}
           </Scroller>
         </section>

@@ -7,6 +7,8 @@ import { fetchPeoplePopular } from "@/lib/data/api-data";
 import CardActor from "@/components/card-actor";
 import Scroller from "@/components/scroller";
 import { getRandomNumber } from "@/lib/utils";
+import Skeleton from "@/components/skeleton";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Actor | CMDB",
@@ -14,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 const popular: PeoplePopular | null = await fetchPeoplePopular();
+const loading = false;
 
 export default async function ActorPage() {
 
@@ -44,7 +47,9 @@ export default async function ActorPage() {
           <section className={styles.container}>
               <Scroller>
               {popular.results.map((data: any, index: number) => (
-                <CardActor key={index} data={data} />
+                <Suspense key={index} fallback={<Skeleton />}>
+                  <CardActor key={index} data={data} loading={loading} />
+                </Suspense>
               ))}
               </Scroller>
           </section>
@@ -64,7 +69,9 @@ export default async function ActorPage() {
         <section className={styles.container}>
             <Scroller>
             {popular.results.map((data: any, index: number) => (
-              <CardActor key={index} data={data} />
+              <Suspense key={index} fallback={<Skeleton />}>
+                <CardActor key={index} data={data} loading={loading} />
+              </Suspense>
             ))}
             </Scroller>
         </section>

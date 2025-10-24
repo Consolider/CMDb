@@ -7,6 +7,8 @@ import { fetchMoviePopular } from "@/lib/data/api-data";
 import CardMovie from "@/components/card-movie";
 import Scroller from "@/components/scroller";
 import { getRandomNumber } from "@/lib/utils";
+import Skeleton from "@/components/skeleton";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Movie | CMDB",
@@ -15,8 +17,9 @@ export const metadata: Metadata = {
 
 const page_nr = 1
 const popular: MoviePopular | null = await fetchMoviePopular(page_nr);
+const loading = false;
 
-export default async function MoviePage() {  
+export default async function MoviePage() {
   return (
       popular !== null ?
       <header className={styles.header}>
@@ -33,7 +36,9 @@ export default async function MoviePage() {
           <section className={styles.container}>
               <Scroller>
               {popular.results.map((data: any, index: number) => (
-                <CardMovie key={index} data={data} />
+                <Suspense key={index} fallback={<Skeleton />}>
+                  <CardMovie key={index} data={data} loading={loading} />
+                </Suspense>
               ))}
               </Scroller>
           </section>
