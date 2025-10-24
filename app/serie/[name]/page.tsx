@@ -8,7 +8,7 @@ import { fetchSerieCredits, fetchSerieDetails } from "@/lib/data/api-data";
 import { MovieCredits, SerieDetails } from "@/lib/interfaces";
 import Scroller from "@/components/scroller";
 import CardActor from "@/components/card-actor";
-import Skeleton from "@/components/skeleton";
+import Skeleton from "@/components/skeleton-card";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {

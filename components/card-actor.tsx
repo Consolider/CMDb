@@ -2,11 +2,11 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "@/components/card-actor.module.css"
 import { toURL } from "@/lib/utils";
-import Skeleton from "@/components/skeleton";
+import SkeletonCard from '@/components/skeleton-card'
 
 export default function CardActor({ data, loading }: { data: any; loading: boolean }) {
   if (loading) {
-    return <Skeleton />;
+    return <SkeletonCard />;
   }
 
   return (

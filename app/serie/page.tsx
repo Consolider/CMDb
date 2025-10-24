@@ -8,7 +8,7 @@ import CardSerie from "@/components/card-serie";
 import Scroller from "@/components/scroller";
 import { getRandomNumber } from "@/lib/utils";
 import SearchSerie from "@/components/search-serie";
-import Skeleton from "@/components/skeleton";
+import Skeleton from "@/components/skeleton-card";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {

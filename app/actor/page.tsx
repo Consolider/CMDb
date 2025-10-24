@@ -7,7 +7,7 @@ import { fetchPeoplePopular } from "@/lib/data/api-data";
 import CardActor from "@/components/card-actor";
 import Scroller from "@/components/scroller";
 import { getRandomNumber } from "@/lib/utils";
-import Skeleton from "@/components/skeleton";
+import Skeleton from "@/components/skeleton-card";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {

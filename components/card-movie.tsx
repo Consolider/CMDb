@@ -3,11 +3,11 @@ import Link from 'next/link';
 import styles from "@/components/card.module.css"
 import { Star } from 'lucide-react';
 import { roundToNearest, toURL } from "@/lib/utils";
-import Skeleton from "@/components/skeleton";
+import SkeletonCard from '@/components/skeleton-card'
 
 export default function CardMovie({ data, loading }: { data: any; loading: boolean }) {
     if (loading) {
-        return <Skeleton />;
+        return <SkeletonCard />;
     }
 
     return (

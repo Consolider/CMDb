@@ -8,7 +8,7 @@ import { fetchPeople, fetchPeopleCombinedCredits } from "@/lib/data/api-data";
 import { People, PeopleCombinedCredits } from "@/lib/interfaces";
 import Scroller from "@/components/scroller";
 import CardMedia from "@/components/card-media";
-import Skeleton from "@/components/skeleton";
+import Skeleton from "@/components/skeleton-card";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {

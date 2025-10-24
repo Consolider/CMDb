@@ -1,6 +1,6 @@
 import styles from "@/components/card.module.css";
 
-export default function Skeleton() {
+export default function SkeletonCard() {
     return (
         <div className={styles.card}>
             <div className={styles.posterSkeleton}>

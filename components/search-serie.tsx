@@ -7,7 +7,7 @@ import { extractYear, roundToNearest, toURL } from "@/lib/utils";
 import { Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useDebounce } from 'use-debounce';
-import Skeleton from '@/components/skeleton-search';
+import SkeletonSearch from "@/components/skeleton-search"
 
 export default function SearchSerie() {
   const [query, setQuery] = useState<string>('');
@@ -59,7 +59,7 @@ export default function SearchSerie() {
       {loading && (
         <div>
           {[...Array(1)].map((_, index) => (
-            <Skeleton key={index} />
+            <SkeletonSearch key={index} />
           ))}
         </div>
       )}
