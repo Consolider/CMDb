@@ -69,15 +69,15 @@ export default function SearchSerie() {
   const [query, setQuery] = useState<string>('');
   const [debouncedQuery] = useDebounce(query, 900);
   const [results, setResults] = useState<any[]>([]);
-  // const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   // const isSearchVisible = searchInput.length > 0 && filteredData.results.length > 0;
-  const loading = true
+  // const loading = true
 
   useEffect(() => {
     if (debouncedQuery) {
       const fetchData = async () => {
-        // setLoading(true);
+        setLoading(true);
         try {
           const response = await fetch(`/api/search?query=${debouncedQuery}`);
           
@@ -90,7 +90,7 @@ export default function SearchSerie() {
         } catch (error) {
           console.error("Error fetching data:", error);
         } finally {
-          // setLoading(false);
+          setLoading(false);
         }
       };
 
