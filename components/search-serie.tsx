@@ -9,70 +9,11 @@ import { useState, useEffect } from 'react';
 import { useDebounce } from 'use-debounce';
 import Skeleton from '@/components/skeleton-search';
 
-// const test_array = [
-//   {
-//   page: 1,
-//   results: [
-//     {
-//       adult: false,
-//       backdrop_path: '/yUOFocKDW7MCC5isx4FK8A68QFp.jpg',
-//       genre_ids: [
-//         1,
-//         2
-//       ],
-//       id: 4607,
-//       origin_country: [
-//         "us",
-//         "se"
-//       ],
-//       original_language: 'en',
-//       original_name: 'Lost',
-//       overview: 'Stripped of everything, the survivors of a horrific plane crash  must work together to stay alive. But the island holds many secrets.',
-//       popularity: 55.5663,
-//       poster_path: 'https://image.tmdb.org/t/p/w185/og6S0aTZU6YUJAbqxeKjCa3kY1E.jpg',
-//       first_air_date: '2004-09-22',
-//       name: 'Lost',
-//       vote_average: 7.9,
-//       vote_count: 4711
-//     },
-//     {
-//       adult: false,
-//       backdrop_path: '/yUOFocKDW7MCC5isx4FK8A68QFp.jpg',
-//       genre_ids: [
-//         1,
-//         2
-//       ],
-//       id: 66732,
-//       origin_country: [
-//         "us",
-//         "se"
-//       ],
-//       original_language: 'en',
-//       original_name: 'Stranger Things',
-//       overview: 'Stripped of everything, the survivors of a horrific plane crash  must work together to stay alive. But the island holds many secrets.',
-//       popularity: 55.5663,
-//       poster_path: 'https://image.tmdb.org/t/p/w185/og6S0aTZU6YUJAbqxeKjCa3kY1E.jpg',
-//       first_air_date: '2016-09-22',
-//       name: 'Stranger Things',
-//       vote_average: 8.7,
-//       vote_count: 4711
-//     }
-//   ],
-//   total_pages: 24,
-//   total_results: 467
-//   }
-// ]
-
-// const data = {test_array}
-
 export default function SearchSerie() {
   const [query, setQuery] = useState<string>('');
   const [debouncedQuery] = useDebounce(query, 900);
   const [results, setResults] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-
-  // const isSearchVisible = searchInput.length > 0 && filteredData.results.length > 0;
-  // const loading = true
 
   useEffect(() => {
     if (debouncedQuery) {
@@ -125,21 +66,12 @@ export default function SearchSerie() {
 
       <div className={styles.search}>
         {results.map((item) => (
-          // <div
-          //   key={item.id}
-          //   className="card"
-          //   onClick={() => window.location.href = `/serie/${item.id}-${item.name.replace(/\s+/g, '-')}`}
-          // >
-          //   <h3>{item.name}</h3>
-          //   <p>{item.description}</p>
-          // </div>
           <Link
             key={item.id}
             className={styles.card}
             href={`/serie/${item.id}-${toURL(item.original_name)}`}
           >
             <Image
-              // src={`${item.poster_path}`}
               src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
               alt={`${item.name} poster`}
               width={100}
