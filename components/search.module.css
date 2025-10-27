@@ -149,12 +149,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    top: 5vh;
+    top: 8vh;
     width: 150%;
     right: 15px;
 
         input {
-            width: 75vw;
+            width: 85vw;
         }
     }
 

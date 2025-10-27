@@ -61,7 +61,6 @@ export default async function Serie({
         height={3000}
       />
       <NavBar />
-
       <div className={styles.content}>
         <h1>{serieDetails.name}</h1>
         <p>{serieDetails.overview}</p>
