@@ -8,6 +8,7 @@ import { fetchSerieCredits, fetchSerieDetails } from "@/lib/data/api-data";
 import { MovieCredits, SerieDetails } from "@/lib/interfaces";
 import Scroller from "@/components/scroller";
 import CardActor from "@/components/card-actor";
+import SearchSerie from "@/components/search-serie";
 import Skeleton from "@/components/skeleton-card";
 import { Suspense } from "react";
 
@@ -60,7 +61,10 @@ export default async function Serie({
         width={5000}
         height={3000}
       />
-      <NavBar />
+      <div className={styles.nav}>
+        <NavBar />
+        <SearchSerie />
+      </div>
       <div className={styles.content}>
         <h1>{serieDetails.name}</h1>
         <p>{serieDetails.overview}</p>
